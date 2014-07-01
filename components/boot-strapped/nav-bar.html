@@ -1,0 +1,18 @@
+<!-- Define element -->
+<polymer-element name="nav-bar" attributes="inverse position">
+	<link rel="import" href="../polymer/polymer.html">
+	<template>
+		<nav class="navbar {{position}}" id="navbarAlpha"></nav>
+	</template>
+	<script>
+		Polymer('nav-bar', {
+			inverse: false,
+			position: 'fixed-top',
+			ready: function() {
+				if(this.inverse) {
+					this.$.navbarAlpha.className += ' navbar-inverse';
+				}
+			}
+		})
+	</script>
+</polymer-element>
